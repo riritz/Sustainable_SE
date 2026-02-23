@@ -10,8 +10,10 @@ RESULTS_DIR="$SCRIPT_DIR/results"
 # Create results folder if it doesn't exist
 mkdir -p "$RESULTS_DIR"
 
+echo "[PROCESSING] Processing dataset..."
+python "$SCRIPT_DIR/prepare_dataset.py"
 
-echo "[MAIN] Running setup and warmup..."
+echo "[SETUP] Running setup and warmup..."
 python "$SCRIPT_DIR/setup.py"
 
 : '
