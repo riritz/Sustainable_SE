@@ -1,0 +1,50 @@
+Download dataset: http://images.cocodataset.org/zips/val2017.zip
+Download annotations: http://images.cocodataset.org/annotations/annotations_trainval2017.zip
+Unzip botth to current dir
+
+For yolov8 run: python exampleyolo.py --images_dir val2017 --annotations annotations_trainval2017/annotations/instances_val2017.json --model_name medium
+
+
+For RF-DETR run: python examplerfdetr.py --images_dir val2017 --annotations annotations_trainval2017/annotations/instances_val2017.json --model_name medium
+
+yolov8 medium:
+Metrics:
+Execution time: 114.14 seconds
+{
+  "precision": 0.7082907455331515,
+  "recall": 0.6594165465686247,
+  "f1_score": 0.6829799016108206
+}
+
+yolov8 nano:
+Metrics:
+Execution time: 97.48 seconds
+{
+  "precision": 0.7136497396546574,
+  "recall": 0.5142872678688919,
+  "f1_score": 0.5977842082802395
+}
+
+
+
+RF-DETR medium:
+Metrics:
+Execution time: 156.26 seconds
+{
+  "precision": 0.8860748625993271,
+  "recall": 0.5612136700861527,
+  "f1_score": 0.6871843047019653
+}
+
+
+RF-DETR nano:
+Metrics:
+Execution time: 131.58 seconds
+{
+  "precision": 0.8859086118935765,
+  "recall": 0.5028683287430231,
+  "f1_score": 0.6415646015773614
+}
+
+
+python examplerfdetr.py --images_dir val2017 --annotations annotations_trainval2017/annotations/instances_val2017.json --model_name nano
