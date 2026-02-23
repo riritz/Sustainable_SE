@@ -10,6 +10,15 @@ RESULTS_DIR="$SCRIPT_DIR/results"
 # Create results folder if it doesn't exist
 mkdir -p "$RESULTS_DIR"
 
+echo "[WEIGHTS] Downloading model weights..."
+python -c "
+from rfdetr import RFDETRNano
+from ultralytics import YOLO
+RFDETRNano()
+YOLO('yolov8n.pt')
+"
+echo "[WEIGHTS] Downloaded..."
+
 echo "[PROCESSING] Processing dataset..."
 python "$SCRIPT_DIR/prepare_dataset.py"
 
