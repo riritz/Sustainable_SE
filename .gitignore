@@ -1,0 +1,6 @@
+venv/
+val2017/
+results/
+
+.vscode/
+.idea/
