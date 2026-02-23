@@ -3,7 +3,8 @@ import torch
 import subprocess
 import time
 from pathlib import Path
-from exampleyolo import process_dataset 
+#from exampleyolo import process_dataset 
+from yolo_model import yolo
 
 SERVICES = ["firefox", "chrome", "code", "spotify", "libreoffice"] # close all applications
 WARMUP_DURATION = 300 # 5min
@@ -66,21 +67,22 @@ def cpu_warmup(WARMUP_DURATION):
     print("[WARMUP] COMPLETE")
 
 # WARM UP - GPU Run interference on YOLO8vm for 5min 
-def gpu_warmup(duration):
+def gpu_warmup(WARMUP_DURATION):
     print("[WARMUP] GPU warm-up with YOLOv8 inference")
 
     start = time.time()
     while time.time() - start < WARMUP_DURATION:
-        process_dataset(
-            images_dir=IMAGES_PATH,
-            annotations_path=IMAGES_ANN_PATH,
-            model_name="medium"
-        )
+        #process_dataset(
+        #    images_dir=IMAGES_PATH,
+        #    annotations_path=IMAGES_ANN_PATH,
+        #    model_name="medium"
+        #)
+        yolo()
 
     print("[WARMUP] GPU warm-up COMPLETE")
 
 
 if __name__ == "__main__":
-    #system_setup()
+    system_setup()
     cpu_warmup(WARMUP_DURATION)
     gpu_warmup(WARMUP_DURATION)
