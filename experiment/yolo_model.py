@@ -3,11 +3,11 @@ from ultralytics import YOLO
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 IMAGES_PATH = os.path.join(BASE_DIR, "dataset", "val2017") # Download dataset at http://images.cocodataset.org/zips/val2017.zip
+WEIGHTS_PATH = os.path.join(BASE_DIR, "yolov8m.pt")
 
-# runmodel
 def yolo():
     print("[MODELS] Loading YOLOv8m...")
-    model = YOLO("yolov8m.pt")
+    model = YOLO(WEIGHTS_PATH)
     print("[MODELS] YOLOv8m Loaded")
 
     print("[INFERENCE] Running YOLOv8m...")

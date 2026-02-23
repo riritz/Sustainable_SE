@@ -15,7 +15,7 @@ python -c "
 from rfdetr import RFDETRNano
 from ultralytics import YOLO
 RFDETRNano()
-YOLO('yolov8n.pt')
+YOLO('yolov8m.pt')
 "
 echo "[WEIGHTS] Downloaded..."
 
