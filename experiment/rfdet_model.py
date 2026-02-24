@@ -5,7 +5,7 @@ from rfdetr import RFDETRMedium
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-IMAGES_PATH = os.path.join(BASE_DIR, "dataset", "val2017") # Download dataset at http://images.cocodataset.org/zips/val2017.zip
+IMAGES_PATH = os.path.join(BASE_DIR, "dataset", "val2017_energy") # Download dataset at http://images.cocodataset.org/zips/val2017.zip
 WEIGHTS_PATH = os.path.join(BASE_DIR, "rf-detr-medium.pth")
 
 def rfdetr():

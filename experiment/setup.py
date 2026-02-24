@@ -88,7 +88,7 @@ def gpu_warmup(WARMUP_DURATION):
         #    annotations_path=IMAGES_ANN_PATH,
         #    model_name="medium"
         #)
-        yolo()
+        yolo(image_dir=IMAGES_PATH)
 
     print("[WARMUP] GPU warm-up COMPLETE")
 

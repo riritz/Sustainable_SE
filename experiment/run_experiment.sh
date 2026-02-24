@@ -57,8 +57,8 @@ time "$ENERGIBRIDGE" \
   -- \
   python "$SCRIPT_DIR/yolo_model.py"
 
-echo "[SLEEP] Cooling down for 60s..."
-sleep 60
+echo "[SLEEP] Cooling down for 30s..."
+sleep 30
 
 echo "[ENERGY] Running RF-DETR..."
 time "$ENERGIBRIDGE" \
