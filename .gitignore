@@ -1,0 +1,6 @@
+venv/
+dataset/
+results/
+
+.vscode/
+.idea/
