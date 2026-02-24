@@ -12,9 +12,9 @@ mkdir -p "$RESULTS_DIR"
 
 echo "[WEIGHTS] Downloading model weights..."
 python -c "
-from rfdetr import RFDETRNano
+from rfdetr import RFDETRMedium
 from ultralytics import YOLO
-RFDETRNano()
+RFDETRMedium()
 YOLO('yolov8m.pt')
 "
 echo "[WEIGHTS] Downloaded..."
@@ -51,7 +51,7 @@ echo "[ENERGY] Running RF-DETR..."
 '
 
 echo "[ENERGY] Running YOLOv8..."
-"$ENERGIBRIDGE" \
+time "$ENERGIBRIDGE" \
   --output "$RESULTS_DIR/yolo_run1.csv" \
   --gpu \
   -- \
@@ -61,7 +61,7 @@ echo "[SLEEP] Cooling down for 60s..."
 sleep 60
 
 echo "[ENERGY] Running RF-DETR..."
-"$ENERGIBRIDGE" \
+time "$ENERGIBRIDGE" \
   --output "$RESULTS_DIR/rfdet_run1.csv" \
   --gpu \
   -- \
