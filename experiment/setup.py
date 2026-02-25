@@ -31,6 +31,17 @@ def system_setup():
     print("[SETUP] Disabling Bluetooth...")
     subprocess.run(["sudo","rfkill", "block", "bluetooth"], check=False)
 
+    print("[SETUP] Disabling auto-brightness...")
+    subprocess.run(["sudo", "systemctl", "stop", "iio-sensor-proxy"], check=False)
+    subprocess.run(["gsettings", "set",
+                    "org.gnome.settings-daemon.plugins.power",
+                    "ambient-enabled", "false"], check=False)
+
+    print("[SETUP] Disabling idle dimming...")
+    subprocess.run(["gsettings", "set",
+                    "org.gnome.settings-daemon.plugins.power",
+                    "idle-dim", "false"], check=False)
+
     print("[SETUP] Setting display brightness...")
     backlight_paths = list(Path("/sys/class/backlight").glob("*/brightness"))
     for path in backlight_paths:
@@ -77,7 +88,7 @@ def gpu_warmup(WARMUP_DURATION):
         #    annotations_path=IMAGES_ANN_PATH,
         #    model_name="medium"
         #)
-        yolo()
+        yolo(image_dir=IMAGES_PATH)
 
     print("[WARMUP] GPU warm-up COMPLETE")
 
