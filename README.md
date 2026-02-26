@@ -36,7 +36,8 @@ This project is part of the course [CS4575 Sustainable Software Engineering](lui
    # Run the prepare script
    ./prepare.sh
    ```
-4. Enable [Zen mode](luiscruz.github.io/2021/10/10/scientific-guide.html)
+4. Enable [Zen mode](luiscruz.github.io/2021/10/10/scientific-guide.html)   
+   There is an example script `setup.py` for automating zen mode.
 
 5. Run the script:
    ```

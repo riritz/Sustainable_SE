@@ -5,7 +5,7 @@ from yolo_model import yolo
 from rfdet_model import rfdetr
 
 SERVICES = ["firefox", "chrome", "code", "spotify", "libreoffice"] # close all applications
-DISPLAY_BRIGHTNESS = 50 #percent
+DISPLAY_BRIGHTNESS = 1 #percent
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
