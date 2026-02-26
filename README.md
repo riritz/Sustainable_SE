@@ -1,7 +1,8 @@
 # Sustainable_SE
-
+This project is part of the course [CS4575 Sustainable Software Engineering](luiscruz.github.io/course_sustainableSE/2026/) as taught at Delft University of Technology in the academic year 2025-2026.
  #### Prerequisites:
-- Energibridge
+- Operating System: Linux (tested on Ubuntu 20.04+)
+- [Energibridge](https://github.com/tdurieux/EnergiBridge)
 
 ### How to run the experiment:
 
@@ -11,17 +12,40 @@
    - Unzip to `dataset` folder
 
 1. Install requirements:
-```
-pip install -r requirements.txt
-```
+   ```
+   pip install -r requirements.txt
+   ```
+2. Set Environment Variable (Optional)
 
-2. Run the script:
-```
-cd experiment
+   By default, the script looks for Energibridge at:
+   ```
+   $HOME/EnergiBridge/target/release/energibridge
+   ```
+   If you installed it elsewhere, set the environment variable ENERGIBRIDGE_PATH:
+   ```
+   export ENERGIBRIDGE_PATH=/path/to/EnergiBridge/target/release/energibridge
+   ```
+3. Run the prepare script:
+   Before running the experiment, you must process the dataset and download model weights:
+   ```
+   cd experiment
 
-# Make script executable
-chmod +x run_experiment.sh
+   # Make the prepare script executable
+   chmod +x prepare.sh
 
-# Run script
-./run_experiment.sh
-```
+   # Run the prepare script
+   ./prepare.sh
+   ```
+4. Enable [Zen mode](luiscruz.github.io/2021/10/10/scientific-guide.html)
+
+5. Run the script:
+   ```
+   cd experiment
+
+   # Make script executable
+   chmod +x run_experiment.sh
+
+   # Run script
+   ./run_experiment.sh
+   ```
+6. Restore Zen Mode

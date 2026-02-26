@@ -8,14 +8,14 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 IMAGES_PATH = os.path.join(BASE_DIR, "dataset", "val2017_energy") # Download dataset at http://images.cocodataset.org/zips/val2017.zip
 WEIGHTS_PATH = os.path.join(BASE_DIR, "rf-detr-medium.pth")
 
-def rfdetr():
+def rfdetr(image_dir: str):
     model = RFDETRMedium(pretrain_weights=WEIGHTS_PATH)
     print("[INFERENCE] Running RF-DETR Medium...")
-    images = list(Path(IMAGES_PATH).glob("*.jpg"))
+    images = list(Path(image_dir).glob("*.jpg"))
     for img_path in images:
         img = Image.open(img_path).convert("RGB")
         model.predict(img)
     print("[INFERENCE] RF-DETR Nano complete.")
 
 if __name__ == "__main__":
-    rfdetr()
+    rfdetr(image_dir=IMAGES_PATH)
