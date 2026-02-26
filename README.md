@@ -1,4 +1,4 @@
-# Sustainable_SE
+# Comparing Energy Consumption in Computer Vision Across Different Model Architectures
 This project is part of the course [CS4575 Sustainable Software Engineering](luiscruz.github.io/course_sustainableSE/2026/) as taught at Delft University of Technology in the academic year 2025-2026.
  #### Prerequisites:
 - Operating System: Linux (tested on Ubuntu 20.04+)
@@ -36,7 +36,8 @@ This project is part of the course [CS4575 Sustainable Software Engineering](lui
    # Run the prepare script
    ./prepare.sh
    ```
-4. Enable [Zen mode](luiscruz.github.io/2021/10/10/scientific-guide.html)
+4. Enable [Zen mode](luiscruz.github.io/2021/10/10/scientific-guide.html)   
+   There is an example script `setup.py` for automating zen mode and freezing the settings.
 
 5. Run the script:
    ```

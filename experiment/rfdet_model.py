@@ -15,7 +15,7 @@ def rfdetr(image_dir: str):
     for img_path in images:
         img = Image.open(img_path).convert("RGB")
         model.predict(img)
-    print("[INFERENCE] RF-DETR Nano complete.")
+    print("[INFERENCE] RF-DETR Medium complete.")
 
 if __name__ == "__main__":
     rfdetr(image_dir=IMAGES_PATH)
